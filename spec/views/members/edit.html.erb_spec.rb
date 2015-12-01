@@ -4,7 +4,7 @@ RSpec.describe "members/edit", type: :view do
   before(:each) do
     @member = assign(:member, Member.create!(
       :username => "MyString",
-      :password => "MyString",
+      :password_digest => "MyString",
       :first_name => "MyString",
       :last_name => "MyString",
       :email => "MyString",
@@ -21,7 +21,7 @@ RSpec.describe "members/edit", type: :view do
 
       assert_select "input#member_username[name=?]", "member[username]"
 
-      assert_select "input#member_password[name=?]", "member[password]"
+      assert_select "input#member_password_digest[name=?]", "member[password_digest]"
 
       assert_select "input#member_first_name[name=?]", "member[first_name]"
 

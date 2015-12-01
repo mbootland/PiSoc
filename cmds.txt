@@ -1,5 +1,11 @@
-rails generate scaffold members username password first_name last_name email course role:integer github
+rails generate scaffold members username password_digest first_name last_name email course role:integer github
 
 rails generate scaffold projects title body:text member:references image github
 
 rails generate scaffold news title body:text member:references
+
+rails d scaffold members username password_digest first_name last_name email course role:integer github
+
+rails d scaffold projects title body:text member:references image github
+
+rails d scaffold news title body:text member:references
