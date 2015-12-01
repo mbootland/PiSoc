@@ -1,0 +1,26 @@
+<%%= render layout: '/shared/widget', locals: { title: 'Show <%= plural_table_name.humanize %>' } do %>
+
+  <%%= render partial: 'shared/notice' %>
+
+  <dl class='dl-horizontal'>
+    <%- attributes.each do |attribute| -%>
+    <dt><%= attribute.human_name %>:</dt>
+    <dd><%%= @<%= singular_table_name %>.<%= attribute.name %> %></dd>
+
+    <%- end -%>
+    <hr />
+    <%%= link_to <%= index_helper %>_path, class: 'btn btn-default' do %>
+      <span class='glyphicon glyphicon-list-alt'></span>
+      Back
+    <%% end %>
+    <%%= link_to edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-pencil'></span>
+      Edit
+    <%% end %>
+    <%%= link_to <%= singular_table_name %>_path(@<%= singular_table_name %>), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      Destroy
+    <%% end %>
+
+  </dl>
+<%% end %>

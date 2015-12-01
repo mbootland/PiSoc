@@ -1,0 +1,5 @@
+<% if notice %>
+  <div class="alert alert-<%= defined?(the_class) ? the_class : 'success'%>" role='alert'>
+    <%= notice %>
+  </div>
+<% end %>

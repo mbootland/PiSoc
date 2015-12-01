@@ -1,0 +1,45 @@
+<%= render layout: '/shared/widget', locals: { title: 'Show Members' } do %>
+
+  <%= render partial: 'shared/notice' %>
+
+  <dl class='dl-horizontal'>
+    <dt>Username:</dt>
+    <dd><%= @member.username %></dd>
+
+    <dt>Password:</dt>
+    <dd><%= @member.password %></dd>
+
+    <dt>First name:</dt>
+    <dd><%= @member.first_name %></dd>
+
+    <dt>Last name:</dt>
+    <dd><%= @member.last_name %></dd>
+
+    <dt>Email:</dt>
+    <dd><%= @member.email %></dd>
+
+    <dt>Course:</dt>
+    <dd><%= @member.course %></dd>
+
+    <dt>Role:</dt>
+    <dd><%= @member.role %></dd>
+
+    <dt>Github:</dt>
+    <dd><%= @member.github %></dd>
+
+    <hr />
+    <%= link_to members_path, class: 'btn btn-default' do %>
+      <span class='glyphicon glyphicon-list-alt'></span>
+      Back
+    <% end %>
+    <%= link_to edit_member_path(@member), class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-pencil'></span>
+      Edit
+    <% end %>
+    <%= link_to member_path(@member), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      Destroy
+    <% end %>
+
+  </dl>
+<% end %>

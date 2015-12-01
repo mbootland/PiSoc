@@ -1,0 +1,5 @@
+rails generate scaffold members username password first_name last_name email course role:integer github
+
+rails generate scaffold projects title body:text member:references image github
+
+rails generate scaffold news title body:text member:references

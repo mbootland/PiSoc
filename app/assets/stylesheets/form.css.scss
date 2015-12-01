@@ -1,0 +1,34 @@
+.form-group.required label:after {
+  content: "*";
+  color: #a94442;
+}
+
+textarea.form-control {
+  height: 83px;
+}
+
+input[type=checkbox] {
+  width: 100%;
+  height: 34px;
+}
+
+input[type=checkbox].inline {
+  margin: 0;
+  height: 21px;
+}
+
+.tooltip-inner {
+    min-width: 200px;
+}
+
+.form_search input[type=checkbox] {
+  height: 14px;
+}
+
+.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus {
+  font-weight: normal;
+}
+
+.sim_section {
+  border-bottom: 1px solid #E6E6E6;
+}

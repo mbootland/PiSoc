@@ -1,0 +1,47 @@
+<%%= form_for(@<%= singular_table_name %>, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
+
+  <div class='row'>
+    <div class='clearfix'>
+
+      <!-- first column start -->
+      <div class='col-sm-6'>
+        <% attributes.each_with_index do |attribute, index| -%>
+<div class='form-group required <%%= 'has-error has-feedback' if @<%= singular_table_name %>.errors[:<%= attribute.name %>].present? %>'>
+          <%%= f.label :<%= attribute.name %>, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%%= f.<%= attribute.field_type %> :<%= attribute.name %>, <% if [:check_box].include? attribute.field_type %>class: 'checkbox', <% else %>class:'form-control', <% end %> data: { toggle: 'tooltip', placement: 'top' },
+              title: @<%= singular_table_name %>.errors[:<%= attribute.name %>],
+              value: @<%= singular_table_name %>.<%= attribute.name %> %>
+            <% if [:text_field, :number_field].include? attribute.field_type -%>
+<%%= feedback_html if @<%= singular_table_name %>.errors[:<%= attribute.name %>].present? %>
+          <% end -%>
+</div>
+        </div>
+      <%= "</div>
+      <!-- first column end -->
+
+      <!-- second column start -->
+      <div class='col-sm-6'>" if index == ((attributes.count.to_f / 2) - 1).ceil %>
+        <% end -%>
+</div>
+      <!-- second column end -->
+
+    </div>
+  </div>
+
+  <hr />
+
+  <div class='form-group'>
+    <%%= f.submit class: 'btn btn-primary' %>
+    <%%= link_to <%= index_helper %>_path, class: 'btn btn-default' do %>
+      <span class='glyphicon glyphicon-list-alt'></span>
+      Back
+    <%% end %>
+    <%% if @<%= singular_table_name %>.id %>
+      <%%= link_to @<%= singular_table_name %>, class: 'btn btn-primary' do %>
+        <span class='glyphicon glyphicon-info-sign'></span>
+        Show
+      <%% end %>
+    <%% end %>
+  </div>
+<%% end %>

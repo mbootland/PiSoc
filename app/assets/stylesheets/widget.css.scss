@@ -1,0 +1,44 @@
+.widget {
+  background: #FBFBFB;
+  border-radius: 8px;
+  float: left;
+  height: 100%;
+  margin-bottom: 30px;
+  width: 100%;
+
+  &.widget_last {
+    margin-right: 0;
+  }
+
+  .widget_header {
+    background: crimson;
+    border-radius: 8px 8px 0 0;
+    color: #808080;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 13px;
+
+    .title {
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .widget_dropdown {
+      float: right;
+      a {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .widget_content {
+    padding: 10px 30px;
+  }
+
+  .wid_bottom_link {
+    margin-top: 20px;
+    padding-right: 15px;
+    text-align: right;
+  }
+}

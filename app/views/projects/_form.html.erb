@@ -1,0 +1,82 @@
+<%= form_for(@project, html: { class: 'form-horizontal', role: 'form' }) do |f| %>
+
+  <div class='row'>
+    <div class='clearfix'>
+
+      <!-- first column start -->
+      <div class='col-sm-6'>
+        <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:title].present? %>'>
+          <%= f.label :title, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%= f.text_field :title, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @project.errors[:title],
+              value: @project.title %>
+            <%= feedback_html if @project.errors[:title].present? %>
+          </div>
+        </div>
+      
+        <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:body].present? %>'>
+          <%= f.label :body, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%= f.text_area :body, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @project.errors[:body],
+              value: @project.body %>
+            </div>
+        </div>
+      
+        <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:member].present? %>'>
+          <%= f.label :member, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%= f.text_field :member, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @project.errors[:member],
+              value: @project.member %>
+            <%= feedback_html if @project.errors[:member].present? %>
+          </div>
+        </div>
+      </div>
+      <!-- first column end -->
+
+      <!-- second column start -->
+      <div class='col-sm-6'>
+        <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:image].present? %>'>
+          <%= f.label :image, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%= f.text_field :image, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @project.errors[:image],
+              value: @project.image %>
+            <%= feedback_html if @project.errors[:image].present? %>
+          </div>
+        </div>
+      
+        <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:github].present? %>'>
+          <%= f.label :github, class: 'col-sm-3 control-label' %>
+          <div class='col-sm-9'>
+            <%= f.text_field :github, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @project.errors[:github],
+              value: @project.github %>
+            <%= feedback_html if @project.errors[:github].present? %>
+          </div>
+        </div>
+      
+        </div>
+      <!-- second column end -->
+
+    </div>
+  </div>
+
+  <hr />
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to projects_path, class: 'btn btn-default' do %>
+      <span class='glyphicon glyphicon-list-alt'></span>
+      Back
+    <% end %>
+    <% if @project.id %>
+      <%= link_to @project, class: 'btn btn-primary' do %>
+        <span class='glyphicon glyphicon-info-sign'></span>
+        Show
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
