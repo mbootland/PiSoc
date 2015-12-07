@@ -1,0 +1,45 @@
+<%= render layout: '/shared/widget', locals: { title: 'Show Users' } do %>
+
+  <%= render partial: 'shared/notice' %>
+
+  <dl class='dl-horizontal'>
+    <dt>Username:</dt>
+    <dd><%= @user.username %></dd>
+
+    <dt>Password digest:</dt>
+    <dd><%= @user.password_digest %></dd>
+
+    <dt>First name:</dt>
+    <dd><%= @user.first_name %></dd>
+
+    <dt>Last name:</dt>
+    <dd><%= @user.last_name %></dd>
+
+    <dt>Email:</dt>
+    <dd><%= @user.email %></dd>
+
+    <dt>Course:</dt>
+    <dd><%= @user.course %></dd>
+
+    <dt>Role:</dt>
+    <dd><%= @user.role %></dd>
+
+    <dt>Github:</dt>
+    <dd><%= @user.github %></dd>
+
+    <hr />
+    <%= link_to users_path, class: 'btn btn-default' do %>
+      <span class='glyphicon glyphicon-list-alt'></span>
+      Back
+    <% end %>
+    <%= link_to edit_user_path(@user), class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-pencil'></span>
+      Edit
+    <% end %>
+    <%= link_to user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
+      <span class="glyphicon glyphicon-trash"></span>
+      Destroy
+    <% end %>
+
+  </dl>
+<% end %>

@@ -16,7 +16,29 @@ ActiveRecord::Schema.define(version: 20151201234340) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "members", force: :cascade do |t|
+  create_table "news", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "news", ["user_id"], name: "index_news_on_user_id", using: :btree
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.string   "image"
+    t.string   "github"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
     t.string   "username"
     t.string   "password_digest"
     t.string   "first_name"
@@ -29,28 +51,6 @@ ActiveRecord::Schema.define(version: 20151201234340) do
     t.datetime "updated_at",      null: false
   end
 
-  create_table "news", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "news", ["member_id"], name: "index_news_on_member_id", using: :btree
-
-  create_table "projects", force: :cascade do |t|
-    t.string   "title"
-    t.text     "body"
-    t.integer  "member_id"
-    t.string   "image"
-    t.string   "github"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "projects", ["member_id"], name: "index_projects_on_member_id", using: :btree
-
-  add_foreign_key "news", "members"
-  add_foreign_key "projects", "members"
+  add_foreign_key "news", "users"
+  add_foreign_key "projects", "users"
 end
