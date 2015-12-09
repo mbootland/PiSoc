@@ -29,7 +29,6 @@ class User < ActiveRecord::Base
   enum role: [:admin, :president, :exec, :member, :guest]
   ROLES = User.roles.collect { |s| [s[0].humanize, s[0]] }
 
-
   @@current_user = nil
 
   def self.current_user= current_user

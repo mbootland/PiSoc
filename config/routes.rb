@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
   resources :news
   resources :projects
   resources :users, only: [] do

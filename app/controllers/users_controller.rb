@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   load_and_authorize_resource except: [:logout, :login, :do_login]
 
   def do_login
-    user = User.enabled.find_by({ username: params[:username] })
+    user = User.find_by({ username: params[:username] })
 
     if user and user.authenticate(params[:password])
       session[:current_user_id] = user.id
@@ -20,15 +20,6 @@ class UsersController < ApplicationController
     flash[:the_class] = 'success'
     @_current_user = session[:current_user_id] = session[:old_current_user_id] = nil
     redirect_to login_users_path, notice: 'Successfully logged out'
-  end
-
-  # GET /users
-  # GET /users.json
-  def index
-    @users = User.details.where(customer: @customer)
-      .order(sort_column + ' ' + sort_direction)
-      .page(params[:page])
-    @users = @users.where('username ilike :search or first_name ilike :search or last_name ilike :search', { search: "#{ params[:q] }%" }) if params[:q]
   end
 
   # GET /users
@@ -92,13 +83,13 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def user_params
-      params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :email, :course, :role, :github)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def user_params
+    params.require(:user).permit(:username, :password, :password_confirmation, :first_name, :last_name, :email, :course, :role, :github)
+  end
 end

@@ -1,4 +1,3 @@
 class HomeController < ApplicationController
-  def index
-  end
+  before_action :authorize
 end
