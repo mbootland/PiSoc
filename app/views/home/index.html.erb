@@ -1,2 +1,8 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<%= render layout: '/shared/widget', locals: { title: 'Home' } do %>
+
+  <%= render partial: 'shared/notice' %>
+
+  <div class='page-header'>
+
+  </div>
+<% end %>

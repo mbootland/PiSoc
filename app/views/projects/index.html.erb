@@ -16,7 +16,7 @@
         <tr>
           <th>Title</th>
           <th>Body</th>
-          <th>Member</th>
+          <th>user</th>
           <th>Image</th>
           <th>Github</th>
         </tr>
@@ -26,7 +26,7 @@
         <%= content_tag_for(:tr, @projects) do |project| %>
           <td><%= link_to project.title, project %></td>
           <td><%= project.body %></td>
-          <td><%= project.member %></td>
+          <td><%= project.user %></td>
           <td><%= project.image %></td>
           <td><%= project.github %></td>
         <% end %>

@@ -7,11 +7,11 @@ body {
 }
 
 a {
-  color: white;
-  font-weight: bold;
+  color: #CCCCCC;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   &:hover {
-    color: #271651;
-    text-decoration: none;
+    // color: #271651;
   }
 }
 

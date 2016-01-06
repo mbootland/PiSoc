@@ -12,19 +12,11 @@
 
   <div class='table-responsive'>
     <table class='table table-striped table-bordered table-hover'>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Body</th>
-          <th>Member</th>
-        </tr>
-      </thead>
-
       <tbody>
         <%= content_tag_for(:tr, @news) do |news| %>
-          <td><%= link_to news.title, news %></td>
-          <td><%= news.body %></td>
-          <td><%= news.member %></td>
+          <h2><%= link_to news.title, news %></h2>
+          <body><%= news.body %></body>
+          <td><%= news.user %></td>
         <% end %>
       </tbody>
     </table>

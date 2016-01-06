@@ -3,27 +3,14 @@
   <nav class='nav-bar'>
     <div class='container'>
       <div class='navbar-header'>
-        <!-- <a class='navbar-brand' href='#'>BCS PiSoc</a> -->
+        <a class='navbar-brand'>BCS PiSoc</a>
       </div>
       <div id='navbar' class='collapse navbar-collapse'>
-        <ul class='navbar-nav'>
-          <li class='<%= current_page?(news_index_path) ? 'active' : nil %>'>
-            <%= link_to 'News', news_index_path %>
-          </li>
-
-          <li class='<%= current_page?(projects_path) ? 'active' : nil %>'>
-            <%= link_to 'Projects', projects_path %>
-          </li>
-
-          <li class='<%= params[:controller] == 'users' ? 'active' : nil %>'>
-            <a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-expanded='false'>
-              My User <span class='caret'></span>
-            </a>
-            <ul class='dropdown-menu' role='menu'>
-              <li><%= link_to t('nav.logout'), logout_users_path %></li>
-            </ul>
-          </li>
-        </ul>
+        <%= link_to 'Logout', logout_users_path, class: "more_right" %>
+        <%= link_to 'Users', users_path, class: "more_right" %>
+        <%= link_to 'News', news_index_path, class: "more_right" %>
+        <%= link_to 'Projects', projects_path, class: "more_right" %>
+        <%= link_to 'home', root_path, class: "more_right" %>
       </div><!--/.nav-collapse -->
     </div>
   </nav>

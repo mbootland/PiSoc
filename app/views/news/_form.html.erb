@@ -28,13 +28,13 @@
 
       <!-- second column start -->
       <div class='col-sm-6'>
-        <div class='form-group required <%= 'has-error has-feedback' if @news.errors[:member].present? %>'>
-          <%= f.label :member, class: 'col-sm-3 control-label' %>
+        <div class='form-group required <%= 'has-error has-feedback' if @news.errors[:user].present? %>'>
+          <%= f.label :user, class: 'col-sm-3 control-label' %>
           <div class='col-sm-9'>
-            <%= f.text_field :member, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
-              title: @news.errors[:member],
-              value: @news.member %>
-            <%= feedback_html if @news.errors[:member].present? %>
+            <%= f.text_field :user, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
+              title: @news.errors[:user],
+              value: @news.user %>
+            <%= feedback_html if @news.errors[:user].present? %>
           </div>
         </div>
       
