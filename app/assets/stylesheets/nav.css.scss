@@ -8,9 +8,16 @@
   border-bottom: 3px solid #323232;
 }
 
-a:hover {
+.more_right:hover {
     color: #FFFFFF;
     border-bottom: 3px solid #A11E22;
-    background-color: #262626;
     text-decoration: none;
+}
+
+.icon {
+  color: #CCCCCC;
+}
+.icon:hover {
+  color: #FFFFFF;
+  border-bottom: none;
 }

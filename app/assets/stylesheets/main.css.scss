@@ -6,13 +6,18 @@ body {
     line-height: 18px;
 }
 
+.title-colour{
+    color: #FFFFFF;
+}
+
 a {
-  color: #CCCCCC;
+  color: white;
   text-transform: uppercase;
   letter-spacing: 1px;
-  &:hover {
-    // color: #271651;
-  }
+}
+a:focus, a:hover {
+    color: red;
+    text-decoration: none;
 }
 
 .dl-horizontal {

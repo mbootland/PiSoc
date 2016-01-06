@@ -1,24 +1,18 @@
-<%= render layout: '/shared/widget', locals: { title: 'News' } do %>
-
-  <%= render partial: 'shared/notice' %>
-
-  <div class='page-header'>
-    <%= link_to new_news_path, class: 'btn btn-primary' do %>
-      <span class='glyphicon glyphicon-plus'></span>
-      New News
+<div class='page-header title-colour'>
+  News
+</div>
+<div>
+  <%= link_to new_news_path, class: 'btn btn-primary' do %>
+    <span class='glyphicon glyphicon-plus'></span>
+    Add Article
+  <% end %>
+</div>
+<%= render partial: 'shared/notice' %>
+<tbody>
+  <%= @news.each do |news| %>
+    <%= render layout: '/shared/widget', locals: { title: (link_to news.title, news) } do %>
+      <%= news.body %>
+      <p><%= news.user %></p>
     <% end %>
-    <h1>Listing News</h1>
-  </div>
-
-  <div class='table-responsive'>
-    <table class='table table-striped table-bordered table-hover'>
-      <tbody>
-        <%= content_tag_for(:tr, @news) do |news| %>
-          <h2><%= link_to news.title, news %></h2>
-          <body><%= news.body %></body>
-          <td><%= news.user %></td>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<% end %>
+  <% end %>
+</tbody>

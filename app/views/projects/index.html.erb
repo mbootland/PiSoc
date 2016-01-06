@@ -1,36 +1,19 @@
-<%= render layout: '/shared/widget', locals: { title: 'Projects' } do %>
-
-  <%= render partial: 'shared/notice' %>
-
-  <div class='page-header'>
-    <%= link_to new_project_path, class: 'btn btn-primary' do %>
-      <span class='glyphicon glyphicon-plus'></span>
-      New Project
+<div class='page-header title-colour'>
+  Projects
+</div>
+<div>
+  <%= link_to new_project_path, class: 'btn btn-primary' do %>
+    <span class='glyphicon glyphicon-plus'></span>
+    Add Project
+  <% end %>
+</div>
+<%= render partial: 'shared/notice' %>
+<tbody>
+  <%= @projects.each do |project| %>
+    <%= render layout: '/shared/widget', locals: { title: (link_to project.title, project) } do %>
+      <%= project.image %>
+      <body><%= project.body %></body>
+      <p><%= project.user %><%= project.github %></p>
     <% end %>
-    <h1>Listing Projects</h1>
-  </div>
-
-  <div class='table-responsive'>
-    <table class='table table-striped table-bordered table-hover'>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>Body</th>
-          <th>user</th>
-          <th>Image</th>
-          <th>Github</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <%= content_tag_for(:tr, @projects) do |project| %>
-          <td><%= link_to project.title, project %></td>
-          <td><%= project.body %></td>
-          <td><%= project.user %></td>
-          <td><%= project.image %></td>
-          <td><%= project.github %></td>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
-<% end %>
+  <% end %>
+</tbody>
