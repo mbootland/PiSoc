@@ -2,12 +2,14 @@
 <div class='page-header title-colour'>
   Users
 </div>
-<div>
-  <%= link_to new_user_path, class: 'btn btn-primary' do %>
-    <span class='glyphicon glyphicon-plus'></span>
-    New User
-  <% end %>
-</div>
+<% if can? :create, User %>
+  <div>
+    <%= link_to new_user_path, class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-plus'></span>
+      New User
+    <% end %>
+  </div>
+<% end %>
 </br>
 <%= render layout: '/shared/widget', locals: { title: 'Users' } do %>
   <div class='table-responsive'>

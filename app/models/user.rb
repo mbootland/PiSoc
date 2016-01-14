@@ -33,7 +33,6 @@ class User < ActiveRecord::Base
 
   def self.current_user= current_user
     @@current_user = current_user
-    Ability.new current_user
   end
 
   def self.current_user

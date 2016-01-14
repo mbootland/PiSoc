@@ -1,8 +1,8 @@
 body {
-    background-color: #333;
-    color: #333;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif, sans-serif;
-    font-size: 15px;
+    background-color: #000000;
+    color: #000000;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
     line-height: 18px;
 }
 
@@ -16,70 +16,6 @@ a {
   letter-spacing: 1px;
 }
 a:focus, a:hover {
-    color: red;
+    color: #A11E22;
     text-decoration: none;
-}
-
-.dl-horizontal {
-  dt {
-    float: left;
-    overflow: hidden;
-    clear: left;
-    text-align: right;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 130px;
-  }
-  dd {
-    margin-left: 150px;
-  }
-}
-
-#img_spinner {
-  display: none;
-  position: absolute;
-  z-index: 999;
-}
-
-@media (max-width: '768px') {
-  label { display: none; }
-}
-
-.modal-content {
-  margin-top: 100px;
-  padding: 10px;
-}
-
-.ui-widget-content a {
-  color: white;
-  font-weight: bold;
-}
-
-.text-warning {
-  color: SandyBrown;
-}
-
-.text-danger {
-  color: OrangeRed;
-}
-
-.welcome {
-  font-family: "Courgette", cursive;
-  font-size: 20px;
-  margin: 0 0 10px 0;
-  color: white;
-}
-
-.footer {
-  border-bottom: 1px solid #D9D9D9;
-  border-top: 1px solid #D9D9D9;
-  color: #B3B3B3;
-  font-size: 13px;
-  line-height: 36px;
-  margin: 30px 0 30px 0;
-  padding: 12px 0;
-  img {
-    vertical-align: middle;
-    margin-right: 10px;
-  }
 }

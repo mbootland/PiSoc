@@ -1,12 +1,14 @@
 <div class='page-header title-colour'>
   News
 </div>
-<div>
-  <%= link_to new_news_path, class: 'btn btn-primary' do %>
-    <span class='glyphicon glyphicon-plus'></span>
-    Add Article
-  <% end %>
-</div>
+<% if can? :create, News %>
+  <div>
+    <%= link_to new_news_path, class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-plus'></span>
+      Add Article
+    <% end %>
+  </div>
+<% end %>
 <%= render partial: 'shared/notice' %>
 <tbody>
   <%= @news.each do |news| %>

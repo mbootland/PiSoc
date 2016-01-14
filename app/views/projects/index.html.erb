@@ -1,12 +1,14 @@
 <div class='page-header title-colour'>
   Projects
 </div>
-<div>
-  <%= link_to new_project_path, class: 'btn btn-primary' do %>
-    <span class='glyphicon glyphicon-plus'></span>
-    Add Project
-  <% end %>
-</div>
+<% if can? :create, Project %>
+  <div>
+    <%= link_to new_project_path, class: 'btn btn-primary' do %>
+      <span class='glyphicon glyphicon-plus'></span>
+      Add Project
+    <% end %>
+  </div>
+<% end %>
 <%= render partial: 'shared/notice' %>
 <tbody>
   <%= @projects.each do |project| %>

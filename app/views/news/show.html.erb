@@ -17,14 +17,19 @@
       <span class='glyphicon glyphicon-list-alt'></span>
       Back
     <% end %>
-    <%= link_to edit_news_path(@news), class: 'btn btn-primary' do %>
-      <span class='glyphicon glyphicon-pencil'></span>
-      Edit
-    <% end %>
-    <%= link_to news_path(@news), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
-      <span class="glyphicon glyphicon-trash"></span>
-      Destroy
+
+    <% if can? :edit, News %>
+      <%= link_to edit_news_path(@news), class: 'btn btn-primary' do %>
+        <span class='glyphicon glyphicon-pencil'></span>
+        Edit
+      <% end %>
     <% end %>
 
+    <% if can? :destroy, News %>
+      <%= link_to news_path(@news), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        Destroy
+      <% end %>
+    <% end %>
   </dl>
 <% end %>

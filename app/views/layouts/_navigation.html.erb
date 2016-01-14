@@ -1,17 +1,16 @@
 <% if @_current_user %>
-  <!-- Fixed navbar -->
   <nav class='nav-bar'>
     <div class='container'>
       <div class='navbar-header'>
-        <a class='navbar-brand icon'>BCS PiSoc</a>
+        <a class='navbar-brand logo'>BCS PiSoc</a>
       </div>
-      <div id='navbar' class='collapse navbar-collapse'>
-        <%= link_to 'Logout', logout_users_path, class: "more_right" %>
-        <%= link_to 'Users', users_path, class: "more_right" %>
-        <%= link_to 'News', news_index_path, class: "more_right" %>
-        <%= link_to 'Projects', projects_path, class: "more_right" %>
-        <%= link_to 'home', root_path, class: "more_right" %>
-      </div><!--/.nav-collapse -->
+      <div>
+        <%= link_to 'Logout', logout_users_path, class: "navi" %>
+        <%= link_to 'Users', users_path, class: "navi" %>
+        <%= link_to 'News', news_index_path, class: "navi" %>
+        <%= link_to 'Projects', projects_path, class: "navi" %>
+        <%= link_to 'home', root_path, class: "navi" %>
+      </div>
     </div>
   </nav>
 <% end %>

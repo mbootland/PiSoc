@@ -23,13 +23,19 @@
       <span class='glyphicon glyphicon-list-alt'></span>
       Back
     <% end %>
-    <%= link_to edit_project_path(@project), class: 'btn btn-primary' do %>
-      <span class='glyphicon glyphicon-pencil'></span>
-      Edit
+
+    <% if can? :edit, Project %>
+      <%= link_to edit_project_path(@project), class: 'btn btn-primary' do %>
+        <span class='glyphicon glyphicon-pencil'></span>
+        Edit
+      <% end %>
     <% end %>
-    <%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
-      <span class="glyphicon glyphicon-trash"></span>
-      Destroy
+
+    <% if can? :destroy, Project %>
+      <%= link_to project_path(@project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger pull-right' do %>
+        <span class="glyphicon glyphicon-trash"></span>
+        Destroy
+      <% end %>
     <% end %>
 
   </dl>

@@ -4,6 +4,7 @@ class Ability
   def initialize(user)
     alias_action :create, :read, :update, :destroy, to: :crud
     alias_action :create, :read, :update, to: :cru
+    return if user.blank?
     if user.admin?
       can :manage, :all
     elsif user.president?

@@ -1,4 +1,4 @@
-.more_right {
+.navi {
   color: #CCCCCC;
   float: right!important;
   text-transform: uppercase;
@@ -8,16 +8,16 @@
   border-bottom: 3px solid #323232;
 }
 
-.more_right:hover {
+.navi:hover {
     color: #FFFFFF;
     border-bottom: 3px solid #A11E22;
     text-decoration: none;
 }
 
-.icon {
+.logo {
   color: #CCCCCC;
 }
-.icon:hover {
+.logo:hover {
   color: #FFFFFF;
   border-bottom: none;
 }
