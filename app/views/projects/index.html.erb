@@ -11,7 +11,7 @@
 <% end %>
 <%= render partial: 'shared/notice' %>
 <tbody>
-  <%= @projects.each do |project| %>
+  <% @projects.each do |project| %>
     <%= render layout: '/shared/widget', locals: { title: (link_to project.title, project) } do %>
       <%= project.image %>
       <body><%= project.body %></body>

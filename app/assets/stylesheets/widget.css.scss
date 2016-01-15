@@ -1,21 +1,21 @@
 .widget {
-  background: #black;
+  background: #282828 ;
   float: left;
   height: 100%;
-  color: #CCCCCC;
+  color: #33CC00;
   margin-bottom: 10px;
   margin-top: 30px;
   width: 80%;
   border-style: solid;
-  border-color: #A11E22;
+  border-color: #A0A0A0;
 
   &.widget_last {
     margin-right: 0;
   }
 
   .widget_header {
-    background: black;
-    color: #CCCCCC;
+    background: #282828;
+    color: #FFFF99;
     height: 48px;
     line-height: 48px;
     padding: 0 13px;

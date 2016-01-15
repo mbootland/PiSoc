@@ -1,6 +1,6 @@
 body {
-    background-color: #000000;
-    color: #000000;
+    background-color: #282828;
+    color: #33CC00;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 13px;
     line-height: 18px;
@@ -8,14 +8,32 @@ body {
 
 .title-colour{
     color: #FFFFFF;
+    font-size: 130%;
 }
 
 a {
-  color: white;
-  text-transform: uppercase;
+  color: #33CCFF;
   letter-spacing: 1px;
 }
 a:focus, a:hover {
     color: #A11E22;
     text-decoration: none;
+}
+.dl-horizontal {
+  dt {
+    float: left;
+    text-align: right;
+    width: 110px;
+    color: #33CCFF;
+  }
+  dd {
+    margin-left: 150px;
+  }
+}
+
+th {
+    color: #FF9900;
+}
+td {
+    color: white;
 }
