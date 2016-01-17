@@ -10,3 +10,17 @@ rails d scaffold users username password_digest first_name last_name email cours
 rails d scaffold projects title body:text user:references image github
 
 rails d scaffold news title body:text user:references
+
+# Table name: users
+#
+#  id              :integer          not null, primary key
+#  username        :string
+#  password_digest :string
+#  first_name      :string
+#  last_name       :string
+#  email           :string
+#  course          :string
+#  role            :integer
+#  github          :string
+#  created_at      :datetime         not null
+#  updated_at      :datetime         not null

@@ -1,15 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :users
   resources :news
   resources :projects
-  resources :users, only: [] do
-    collection do
-      get 'login'
-      post 'do_login'
-      get 'logout'
-    end
-  end
   root to: 'home#index'
-  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

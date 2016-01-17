@@ -16,21 +16,20 @@
     <table class='table table-bordered title-colour'>
       <thead>
         <tr>
-          <th>Username</th>
+          <th>Email</th>
           <th>First name</th>
           <th>Last name</th>
-          <th>Email</th>
           <th>Role</th>
         </tr>
       </thead>
 
       <tbody>
         <% @users.each do |user| %>
-          <td><%= link_to user.username, user %></td>
+          <td><%= link_to user.email, user %></td>
           <td><%= user.first_name %></td>
           <td><%= user.last_name %></td>
-          <td><%= user.email %></td>
           <td><%= user.role %></td>
+        </tr>
         <% end %>
       </tbody>
     </table>

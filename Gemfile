@@ -4,6 +4,8 @@ ruby '2.2.2'
 
 gem 'rails', '4.2.2'
 gem 'pg'
+# User auth with forgot password and signup functionality
+gem 'devise'
 # Generates views with bootstrap styling
 gem 'bootstrap-generators', '~> 3.3.4'
 # For pagination
@@ -41,9 +43,6 @@ group :development do
 end
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
@@ -53,7 +52,4 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0'
-  gem 'guard-rspec', require: false
-  gem 'factory_girl_rails'
-  gem 'faker'
 end

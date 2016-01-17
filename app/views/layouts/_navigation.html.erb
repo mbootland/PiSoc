@@ -1,11 +1,11 @@
-<% if @_current_user %>
+<% if current_user %>
   <nav class='nav-bar'>
     <div class='container'>
       <div class='navbar-header'>
         <a class='navbar-brand logo'>BCS PiSoc</a>
       </div>
       <div>
-        <%= link_to 'Logout', logout_users_path, class: "navi" %>
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "navi" %>
         <%= link_to 'Users', users_path, class: "navi" %>
         <%= link_to 'News', news_index_path, class: "navi" %>
         <%= link_to 'Projects', projects_path, class: "navi" %>

@@ -1,0 +1,50 @@
+<% if flash.present? %>
+<div class="alert alert-<%= flash[:css_class] ? flash[:css_class] : 'danger' %>" role='alert'>
+    <%
+      flash.each do |name, msg|
+        next if name == 'css_class'
+    %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+  </div>
+<% end %>
+
+
+<div class='row text-center'>
+  <div class='clearfix'>
+    <div style='width: 400px; margin: 0 auto; margin-top: 10%;'>
+      <%= render layout: '/shared/widget', locals: { title: 'Login' } do %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+          <div class="field">
+            <%= f.label :email, class: 'control-label' %><br />
+            <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'email' %>
+          </div>
+
+          <div class="field">
+            <%= f.label :password, class: 'control-label' %><br />
+            <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <div class="field checkbox">
+              <%= f.check_box :remember_me, class: 'inline' %>
+              <%= f.label :remember_me %>
+            </div>
+          <% end -%>
+
+          <div class="actions">
+            <%= f.submit "Log in", class: 'btn btn-primary', style: 'margin-top: 10px;' %>
+          </div>
+        <% end %>
+        <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+          <%= link_to "Sign up", new_registration_path(resource_name) %><br />
+        <% end -%>
+
+        <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' && Rails.env.development? %>
+          <%= link_to "Forgot your password?", new_password_path(resource_name) %><br />
+        <% end -%>
+      <% end %>
+      <div>
+    </div>
+  </div>
+</div>

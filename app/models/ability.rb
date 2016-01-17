@@ -2,9 +2,10 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    user ||= User.new
+
     alias_action :create, :read, :update, :destroy, to: :crud
     alias_action :create, :read, :update, to: :cru
-    return if user.blank?
     if user.admin?
       can :manage, :all
     elsif user.president?
@@ -15,13 +16,10 @@ class Ability
       can :read, User
       can :cru, News
       can :cru, Project
-    elsif user.user?
+    elsif user.member?
       can :read, News
       can :read, Project
-      can :cru, User, user: user
-    elsif user.guest?
-      can :read, News
-      can :read, Project
+      can :cru, User if user == User.params_user
     end
   end
 end

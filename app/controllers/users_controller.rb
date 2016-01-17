@@ -1,26 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:index, :show, :edit, :update, :destroy]
-  before_action :authorize, except: [:login, :do_login]
-  load_and_authorize_resource except: [:logout, :login, :do_login]
-
-  def do_login
-    user = User.find_by({ username: params[:username] })
-
-    if user and user.authenticate(params[:password])
-      session[:current_user_id] = user.id
-      redirect_to params[:redirect_path] and return if params[:redirect_path]
-      redirect_to root_path, notice: "#{ current_user.first_name }, you have been logged in successfully"
-    else
-      flash[:the_class] = 'danger'
-      redirect_to login_users_path(redirect_path: params[:redirect_path]), notice: 'Incorrect login details'
-    end
-  end
-
-  def logout
-    flash[:the_class] = 'success'
-    @_current_user = session[:current_user_id] = session[:old_current_user_id] = nil
-    redirect_to login_users_path, notice: 'Successfully logged out'
-  end
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -85,7 +64,8 @@ class UsersController < ApplicationController
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
-    @user = User.current_user ||= User.find(params[:id])
+    @user = User.find(params[:id])
+    User.params_user = @user
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

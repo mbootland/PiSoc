@@ -1,41 +1,38 @@
-# == Schema Information
-#
-# Table name: users
-#
-#  id              :integer          not null, primary key
-#  username        :string
-#  password_digest :string
-#  first_name      :string
-#  last_name       :string
-#  email           :string
-#  course          :string
-#  role            :integer
-#  github          :string
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#
-
 class User < ActiveRecord::Base
-  versioned
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
 
-  has_secure_password
+  has_many :projects
+  has_many :news
 
-  validates :username, presence: true
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
-  validates :role, presence: true, null: false
+  enum role: [:admin, :president, :exec, :member]
 
-  enum role: [:admin, :president, :exec, :user, :guest]
-  ROLES = User.roles.collect { |s| [s[0].humanize, s[0]] }
+  before_create :set_role
 
-  @@current_user = nil
 
-  def self.current_user= current_user
-    @@current_user = current_user
+  def self.enabled_roles current_user
+    roles = User.roles
+    role_id = User.roles[current_user.role]
+    roles = roles.select do |key, value|
+      res = value >= role_id
+      res
+    end
   end
 
-  def self.current_user
-    @@current_user ||= User.new
+  @@params_user = nil
+
+  def self.params_user= params_user
+    @@params_user = params_user
+  end
+
+  def self.params_user
+    @@params_user ||= User.new
+  end
+
+  private
+  def set_role
+    self.role = 'member' if self.role.nil?
   end
 end
