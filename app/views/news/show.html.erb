@@ -7,7 +7,7 @@
     <dd><%= @news.title %></dd>
 
     <dt>Body:</dt>
-    <dd><%= @news.body %></dd>
+    <dd><%= @news.body.html_safe %></dd>
 
     <dt>User:</dt>
     <dd><%= @news.user %></dd>

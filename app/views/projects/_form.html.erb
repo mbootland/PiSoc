@@ -14,7 +14,7 @@
             <%= feedback_html if @project.errors[:title].present? %>
           </div>
         </div>
-      
+
         <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:body].present? %>'>
           <%= f.label :body, class: 'col-sm-3 control-label' %>
           <div class='col-sm-9'>
@@ -23,7 +23,7 @@
               value: @project.body %>
             </div>
         </div>
-      
+
         <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:user].present? %>'>
           <%= f.label :user, class: 'col-sm-3 control-label' %>
           <div class='col-sm-9'>
@@ -47,7 +47,7 @@
             <%= feedback_html if @project.errors[:image].present? %>
           </div>
         </div>
-      
+
         <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:github].present? %>'>
           <%= f.label :github, class: 'col-sm-3 control-label' %>
           <div class='col-sm-9'>
@@ -57,7 +57,7 @@
             <%= feedback_html if @project.errors[:github].present? %>
           </div>
         </div>
-      
+
         </div>
       <!-- second column end -->
 

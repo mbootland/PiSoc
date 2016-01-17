@@ -13,7 +13,7 @@
 <tbody>
   <% @news.each do |news| %>
     <%= render layout: '/shared/widget', locals: { title: (link_to news.title, news) } do %>
-      <%= news.body %>
+      <%= news.body.html_safe %>
       <p><%= news.user %></p>
     <% end %>
   <% end %>
