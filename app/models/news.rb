@@ -12,4 +12,13 @@
 
 class News < ActiveRecord::Base
   belongs_to :user
+
+  validates :title, presence: true, length: { minimum: 3 }
+  validates :body, presence: true
+  validates :user_id, presence: true
+
+  scope :details, -> {
+    select('news.*, users.first_name as first_name, users.last_name as last_name')
+    .joins(:user)
+  }
 end

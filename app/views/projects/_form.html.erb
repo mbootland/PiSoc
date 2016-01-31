@@ -11,7 +11,6 @@
             <%= f.text_field :title, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
               title: @project.errors[:title],
               value: @project.title %>
-            <%= feedback_html if @project.errors[:title].present? %>
           </div>
         </div>
 
@@ -27,10 +26,8 @@
         <div class='form-group required <%= 'has-error has-feedback' if @project.errors[:user].present? %>'>
           <%= f.label :user, class: 'col-sm-3 control-label' %>
           <div class='col-sm-9'>
-            <%= f.text_field :user, class:'form-control',  data: { toggle: 'tooltip', placement: 'top' },
-              title: @project.errors[:user],
-              value: @project.user %>
-            <%= feedback_html if @project.errors[:user].present? %>
+            <%= f.select :user_id, options_for_select(User.all.collect { |s| [s.email, s.id] }, selected: @project.user_id),
+                { include_blank: ' - Please select -' }, class: 'form-control' %>
           </div>
         </div>
       </div>

@@ -28,7 +28,7 @@ class User < ActiveRecord::Base
   end
 
   def self.params_user
-    @@params_user ||= User.new
+    @@params_user
   end
 
   private

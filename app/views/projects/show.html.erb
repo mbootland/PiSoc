@@ -9,14 +9,14 @@
     <dt>Body:</dt>
     <dd><%= @project.body.html_safe %></dd><br />
 
-    <dt>user:</dt>
-    <dd><%= @project.user %></dd><br />
+    <dt>Project<br/> Lead:</dt>
+    <dd><%= @project.first_name +  ' ' + @project.last_name %></dd><br />
 
     <dt>Image:</dt>
     <dd><img src="<%= @project.image.html_safe %>" style="width:304px;height:228px;"></dd><br />
 
     <dt>Github:</dt>
-    <dd><%= @project.github %></dd><br />
+    <dd><%= link_to @project.github,  @project.github %></dd><br />
 
     <hr />
     <%= link_to projects_path, class: 'btn btn-default' do %>

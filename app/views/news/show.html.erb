@@ -9,8 +9,11 @@
     <dt>Body:</dt>
     <dd><%= @news.body.html_safe %></dd>
 
-    <dt>User:</dt>
-    <dd><%= @news.user %></dd>
+    <dt>Author:</dt>
+    <dd><%= @news.first_name + ' ' + @news.last_name %></dd>
+
+    <dt>Posted at:</dt>
+    <dd><%= @news.created_at %></dd>
 
     <hr />
     <%= link_to news_index_path, class: 'btn btn-default' do %>

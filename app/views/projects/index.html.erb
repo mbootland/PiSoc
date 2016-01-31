@@ -13,7 +13,10 @@
 <tbody>
   <% @projects.each do |project| %>
     <%= render layout: '/shared/widget', locals: { title: (link_to project.title, project) } do %>
-      <div class="sub-title"><%= author project %></p></div>
+      <div class="sub-title">
+        <%= author project %></p>
+        <p>Github: <%= link_to project.github %></p>
+      </div>
       <body><img src="<%= project.image.html_safe %>" style="width:304px;height:228px;" align="right">
       <%= project.body.html_safe %></body>
     <% end %>
