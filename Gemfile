@@ -8,6 +8,7 @@ gem 'pg'
 gem 'devise'
 # For deploying the server temporarily, required for viva
 gem 'heroku'
+gem 'rails_12factor'
 # Generates views with bootstrap styling
 gem 'bootstrap-generators', '~> 3.3.4'
 # For pagination
