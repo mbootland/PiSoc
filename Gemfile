@@ -6,6 +6,8 @@ gem 'rails', '4.2.2'
 gem 'pg'
 # User auth with forgot password and signup functionality
 gem 'devise'
+# For deploying the server temporarily, required for viva
+gem 'heroku'
 # Generates views with bootstrap styling
 gem 'bootstrap-generators', '~> 3.3.4'
 # For pagination
@@ -25,8 +27,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Authorisation based on abilities of users/roles.
 gem 'cancancan', '~> 1.10'
-gem 'asset_sync'
 gem 'paperclip', '~> 4.3'
+gem "fog-aws"
+gem "asset_sync"
 
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
