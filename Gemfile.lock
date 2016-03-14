@@ -152,6 +152,7 @@ GEM
       mime-types
       mimemagic (= 0.3.0)
     pg (0.18.3)
+    puma (2.13.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -267,6 +268,7 @@ DEPENDENCIES
   kaminari
   paperclip (~> 4.3)
   pg
+  puma
   rails (= 4.2.2)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
