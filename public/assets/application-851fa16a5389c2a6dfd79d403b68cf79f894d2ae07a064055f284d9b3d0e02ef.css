@@ -1,0 +1,160 @@
+/* line 1, /Users/matt/apps/pisoc/app/assets/stylesheets/form.css.scss */
+.form-group.required label:after {
+  content: "*";
+  color: #a94442;
+}
+/* line 1, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+body {
+  background-color: #282828;
+  color: #33CC00;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 15px;
+  line-height: 18px;
+}
+
+/* line 9, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.has-feedback .form-control {
+  padding-right: 22px;
+}
+
+/* line 13, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.tooltip {
+  background-color: black;
+}
+
+/* line 17, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.title-colour {
+  color: #FFFFFF;
+  font-size: 120%;
+}
+
+/* line 22, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.sub-title {
+  color: #FF9900;
+}
+
+/* line 26, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+a {
+  color: #33CCFF;
+  letter-spacing: 1px;
+}
+
+/* line 30, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+a:focus, a:hover {
+  color: #A11E22;
+  text-decoration: none;
+}
+
+/* line 35, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.dl-horizontal dt {
+  float: left;
+  text-align: right;
+  width: 110px;
+  color: #33CCFF;
+}
+/* line 41, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+.dl-horizontal dd {
+  margin-left: 150px;
+}
+
+/* line 46, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+th {
+  color: #FF9900;
+}
+
+/* line 49, /Users/matt/apps/pisoc/app/assets/stylesheets/main.css.scss */
+td {
+  color: white;
+}
+/* line 1, /Users/matt/apps/pisoc/app/assets/stylesheets/nav.css.scss */
+.navi {
+  color: #FFFF99;
+  float: right !important;
+  line-height: 30px;
+  font-size: 110%;
+  letter-spacing: 1px;
+  padding: 5px 10px 2px 10px;
+  border-bottom: 3px solid #323232;
+}
+
+/* line 11, /Users/matt/apps/pisoc/app/assets/stylesheets/nav.css.scss */
+.navi:hover {
+  color: #FFFFFF;
+  border-bottom: 3px solid #A11E22;
+  text-decoration: none;
+}
+
+/* line 17, /Users/matt/apps/pisoc/app/assets/stylesheets/nav.css.scss */
+.logo {
+  color: #FF9900;
+}
+
+/* line 20, /Users/matt/apps/pisoc/app/assets/stylesheets/nav.css.scss */
+.logo:hover {
+  color: #FFFFFF;
+  border-bottom: none;
+}
+/* line 1, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget {
+  background: #282828;
+  float: left;
+  height: 100%;
+  color: #33CC00;
+  margin-bottom: 10px;
+  margin-top: 30px;
+  width: 80%;
+  border-style: solid;
+  border-color: #A0A0A0;
+}
+/* line 12, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget.widget_last {
+  margin-right: 0;
+}
+/* line 16, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .widget_header {
+  background: #282828;
+  color: #FFFF99;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 13px;
+}
+/* line 23, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .widget_header .title {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+/* line 29, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .widget_header .widget_dropdown {
+  float: right;
+}
+/* line 31, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .widget_header .widget_dropdown a {
+  font-size: 15px;
+}
+/* line 37, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .widget_content {
+  padding: 10px 30px;
+}
+/* line 41, /Users/matt/apps/pisoc/app/assets/stylesheets/widget.css.scss */
+.widget .wid_bottom_link {
+  margin-top: 20px;
+  padding-right: 15px;
+  text-align: right;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
